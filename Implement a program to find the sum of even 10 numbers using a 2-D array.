@@ -1,0 +1,31 @@
+import java.util.*;
+public class E
+{
+   public static void main(String args[])
+     {
+        System.out.println("enter 10 no--->>");
+        Scanner sc=new Scanner(System.in);
+        int[][] y=new int[2][5];
+        for(int m=0;m<2;m++)
+         {
+           for(int n=0;n<5;n++)
+            {
+              y[m][n]=sc.nextInt();
+            }
+         }
+       int sum=0;
+        for(int m=0;m<2;m++)
+         {
+           for(int n=0;n<5;n++)
+           {
+             if(y[m][n]%2==0)
+             {
+                sum=sum+y[m][n];
+              }
+           }
+         }
+     System.out.println("sum of even no is--->"+sum);
+  }
+}
+                   
+       
