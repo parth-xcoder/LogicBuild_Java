@@ -1,0 +1,106 @@
+package com.windowproject;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+
+public class Calculator implements ActionListener
+ {    
+	  JFrame f;
+	  Container c;
+	  JButton b1,b2,b3,b4;
+	  JTextField t1,t2,t3;
+	  JLabel l1,l2,l3;
+
+
+	public Calculator() {
+		f=new JFrame("Calculator");
+		c=f.getContentPane();
+		b1=new JButton("+");
+		b2=new JButton("-");
+		b3=new JButton("*");
+		b4=new JButton("/");
+		
+		l1=new JLabel("Enter First Number");
+		t1=new JTextField();
+		l1.setBounds(20, 30, 150, 50);
+		t1.setBounds(180, 30, 100, 40);
+		c.add(l1);
+		c.add(t1);
+		
+		l2=new JLabel("Enter Second Number");
+		t2=new JTextField();
+		l2.setBounds(20, 90, 150, 50);
+		c.add(l2);
+		t2.setBounds(180, 90, 100, 40);
+		c.add(t2);
+		b1.setBounds(40,170, 50,30);
+		c.add(b1);
+		b2.setBounds(120,170,50,30);
+		c.add(b2);
+		b3.setBounds(200,170,50,30);
+		c.add(b3);
+		b4.setBounds(280,170,50,30);
+		c.add(b4);
+		
+		l3=new JLabel("Result is");
+		t3=new JTextField();
+		l3.setBounds(50, 220, 150, 50);
+		c.add(l3);
+		t3.setBounds(150, 220, 100, 40);
+		c.add(t3);
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
+		
+		
+		
+		c.setBackground(Color.GREEN);
+		f.setLayout(null);
+		f.setBounds(0, 0, 600, 600);
+		f.setVisible(true);
+		
+		
+		
+		
+	}
+
+	public static void main(String[] args) {
+		
+		new Calculator();
+	}
+
+		public void actionPerformed(ActionEvent e)
+		{
+			String a=t1.getText();
+			String b=t2.getText();
+			
+			int k=Integer.parseInt(a);
+			int p=Integer.parseInt(b);
+			
+			if(b1==e.getSource())
+			{
+				int y=k+p;
+				t3.setText(""+y);
+			}
+			if(b2==e.getSource())
+			{
+				int y=k-p;
+				t3.setText(""+y);
+			}
+			if(b3==e.getSource())
+			{
+				int y=k*p;
+				t3.setText(""+y);
+			}
+			if(b4==e.getSource())
+			{
+				int y=k/p;
+				t3.setText(""+y);
+			}
+			
+			
+			
+		}
+   }
+
